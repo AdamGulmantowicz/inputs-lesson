@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  padding: 4rem;
+}
+
+button {
+  margin-top: 2rem;
+}
+
+.field {
+  position: relative;
+  max-width: 178px;
+  margin-bottom: 2rem;
+}
+
+.input {
+  padding: 10px 6px 10px;
+  border: 2px solid transparent;
+  background: #fefefe;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.label {
+  position: absolute;
+  left: 8px;
+  opacity: 0;
+  font-size: 10px;
+  color: white;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:not(:placeholder-shown) {
+  color: white;
+  padding: 16px 6px 4px;
+}
+
+.input:not(:placeholder-shown) + .label {
+  opacity: 1;
+  top: 8px;
+}
+
+.input:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.input:invalid:not(:placeholder-shown) {
+  background-color: red;
+}
+
+.input:valid:not(:placeholder-shown) {
+  background-color: green;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input:disabled:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* .input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  background-color: yellow !important;
+} */
+
+/* input:-webkit-autofill {
+  background-color: blue !important;
+  appearance: auto !important;
+  -webkit-box-shadow: 0 0 0 50px white inset;
+} */
+
+.checkbox {
+  height: 0;
+  width: 0;
+}
+
+.checkbox + .label-checkbox {
+  cursor: pointer;
+}
+
+.checkbox + .label-checkbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background-color: grey;
+  display: inline-block;
+  margin-right: 5px;
+  transition: all 0.2s;
+  border: 1px solid black;
+}
+
+.checkbox:checked + .label-checkbox::before {
+  background-color: aqua;
+}
+
+.checkbox:checked + .label-checkbox::after {
+  content: "\2605";
+  color: yellow;
+  position: absolute;
+  left: 5px;
+  top: -4px;
+  font-size: 15px;
+}
